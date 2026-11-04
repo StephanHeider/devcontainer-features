@@ -1,0 +1,31 @@
+{
+    "id": "nvc",
+    "version": "1.0.0",
+    "name": "NVC VHDL Compiler",
+    "description": "Installs NVC, an open source VHDL compiler and simulator (https://github.com/nickg/nvc).",
+    "documentationURL": "https://github.com/StephanHeider/devcontainer-features/tree/main/src/nvc",
+    "licenseURL": "https://github.com/nickg/nvc/blob/master/COPYING",
+    "keywords": ["vhdl", "nvc", "simulator", "fpga", "hdl"],
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": ["latest", "1.23.1", "1.22.3"],
+            "default": "latest",
+            "description": "NVC version to install (e.g. 1.23.1) or 'latest'."
+        },
+        "installMethod": {
+            "type": "string",
+            "enum": ["auto", "deb", "source"],
+            "default": "auto",
+            "description": "'deb' uses the prebuilt Ubuntu package (amd64, Ubuntu 22.04/24.04/26.04 only), 'source' builds from the release tarball, 'auto' prefers 'deb' and falls back to 'source'."
+        },
+        "libraries": {
+            "type": "string",
+            "default": "",
+            "description": "Space or comma separated list of third-party VHDL libraries to pre-compile via 'nvc --install' (e.g. 'osvvm uvvm')."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
