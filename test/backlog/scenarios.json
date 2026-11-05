@@ -1,0 +1,10 @@
+{
+    "pinned_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+        "features": {
+            "backlog": {
+                "version": "1.55.3"
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "id": "backlog",
+    "version": "1.0.0",
+    "name": "Backlog.md",
+    "description": "Installs Backlog.md, a markdown-native task manager and Kanban board for Git repositories (https://github.com/MrLesk/Backlog.md).",
+    "documentationURL": "https://github.com/StephanHeider/devcontainer-features/tree/main/src/backlog",
+    "licenseURL": "https://github.com/MrLesk/Backlog.md/blob/main/LICENSE",
+    "keywords": ["backlog", "backlog.md", "tasks", "kanban", "markdown"],
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": ["latest", "1.55.3"],
+            "default": "latest",
+            "description": "Backlog.md version to install (e.g. 1.55.3) or 'latest'."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

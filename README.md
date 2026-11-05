@@ -7,6 +7,7 @@ published to `ghcr.io/stephanheider/devcontainer-features`.
 | ------- | ----------- |
 | [nvc](src/nvc) | [NVC](https://github.com/nickg/nvc) open source VHDL compiler and simulator |
 | [dotfiles](src/dotfiles) | Clones your dotfiles repository and runs its `install.sh`, if present |
+| [backlog](src/backlog) | [Backlog.md](https://github.com/MrLesk/Backlog.md) markdown-native task manager and Kanban board |
 
 ## Usage
 
@@ -41,6 +42,19 @@ The repository is cloned to `~/.dotfiles`. Set both `gitName` and `gitEmail` to 
 
 OSVVM is then usable directly via `library osvvm;` without any `-L` option.
 Further libraries supported by `nvc --install` (e.g. `uvvm`, `vunit`) can be added as a space or comma separated list.
+
+To install Backlog.md (prebuilt binary, amd64/arm64):
+
+```json
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+    "features": {
+        "ghcr.io/stephanheider/devcontainer-features/backlog:1": {
+            "version": "latest"
+        }
+    }
+}
+```
 
 ## Repository layout
 
