@@ -1,0 +1,33 @@
+{
+    "id": "dotfiles",
+    "version": "1.0.0",
+    "name": "Dotfiles",
+    "description": "Clones a dotfiles repository and runs its install.sh script when present.",
+    "documentationURL": "https://github.com/StephanHeider/devcontainer-features/tree/main/src/dotfiles",
+    "keywords": ["dotfiles", "shell", "configuration"],
+    "options": {
+        "repository": {
+            "type": "string",
+            "default": "https://github.com/StephanHeider/dotfiles.git",
+            "description": "Git URL of the dotfiles repository to clone."
+        },
+        "branch": {
+            "type": "string",
+            "default": "",
+            "description": "Optional branch to check out. By default, the repository's default branch is used."
+        },
+        "gitName": {
+            "type": "string",
+            "default": "",
+            "description": "Git user.name passed to install.sh. Set together with gitEmail to run the installer noninteractively."
+        },
+        "gitEmail": {
+            "type": "string",
+            "default": "",
+            "description": "Git user.email passed to install.sh. Set together with gitName to run the installer noninteractively."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

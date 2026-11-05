@@ -1,0 +1,11 @@
+{
+    "with_installer": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+        "features": {
+            "dotfiles": {
+                "gitName": "Dev Container Test",
+                "gitEmail": "devcontainer@example.invalid"
+            }
+        }
+    }
+}

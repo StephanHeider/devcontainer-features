@@ -6,6 +6,7 @@ published to `ghcr.io/stephanheider/devcontainer-features`.
 | Feature | Description |
 | ------- | ----------- |
 | [nvc](src/nvc) | [NVC](https://github.com/nickg/nvc) open source VHDL compiler and simulator |
+| [dotfiles](src/dotfiles) | Clones your dotfiles repository and runs its `install.sh`, if present |
 
 ## Usage
 
@@ -20,6 +21,23 @@ published to `ghcr.io/stephanheider/devcontainer-features`.
     }
 }
 ```
+
+To install your dotfiles in a development container:
+
+```json
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+    "features": {
+        "ghcr.io/stephanheider/devcontainer-features/dotfiles:1": {
+            "repository": "https://github.com/StephanHeider/dotfiles.git",
+            "gitName": "Your Name",
+            "gitEmail": "you@example.com"
+        }
+    }
+}
+```
+
+The repository is cloned to `~/.dotfiles`. Set both `gitName` and `gitEmail` to run its `install.sh` as the remote user; they are passed to the script to avoid interactive prompts. Without both values, the repository is cloned but the installer is skipped. Set `branch` to check out a specific branch.
 
 OSVVM is then usable directly via `library osvvm;` without any `-L` option.
 Further libraries supported by `nvc --install` (e.g. `uvvm`, `vunit`) can be added as a space or comma separated list.
